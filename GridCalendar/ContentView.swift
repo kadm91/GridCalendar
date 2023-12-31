@@ -38,15 +38,15 @@ struct Day: Identifiable {
 
 struct Month {
     let name: String
-    let numberOFDays: Int
+    let numberOfDays: Int
     var days: [Day]
     
-    init(name: String, numberOFDays: Int) {
+    init(name: String, numberOfDays: Int) {
         self.name = name
-        self.numberOFDays = numberOFDays
+        self.numberOfDays = numberOfDays
         self.days = []
         
-        for i in 1...numberOFDays {
+        for i in 1...numberOfDays {
             self.days.append(Day(value: i))
         }
     }
