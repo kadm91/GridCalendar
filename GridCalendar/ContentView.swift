@@ -51,3 +51,21 @@ struct Month {
         }
     }
 }
+
+//MARK: - data example
+
+let year = [
+    Month(name: "January", numberOfDays: 31),
+    Month(name: "February", numberOfDays: 28),
+    Month(name: "March", numberOfDays: 31),
+    Month(name: "April", numberOfDays: 30),
+    Month(name: "May", numberOfDays: 31),
+    Month(name: "June", numberOfDays: 30),
+    Month(name: "July", numberOfDays: 31),
+    Month(name: "August", numberOfDays: 31),
+    Month(name: "September", numberOfDays: 30),
+    Month(name: "October", numberOfDays: 31),
+    Month(name: "November", numberOfDays: 30),
+    Month(name: "December", numberOfDays: 31),
+]
+
