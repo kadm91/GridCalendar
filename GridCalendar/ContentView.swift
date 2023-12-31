@@ -14,15 +14,17 @@ struct ContentView: View {
     ]
     
     var body: some View {
-        LazyVGrid(columns: layout) {
-            ForEach(year[0].days) { day in
-                Capsule()
-                    .overlay(
-                        Text("\(day.value)")
-                            .foregroundStyle(.white)
-                    )
-                    .foregroundColor(.blue)
-                    .frame(height: 40)
+        ScrollView {
+            LazyVGrid(columns: layout) {
+                ForEach(year[0].days) { day in
+                    Capsule()
+                        .overlay(
+                            Text("\(day.value)")
+                                .foregroundStyle(.white)
+                        )
+                        .foregroundColor(.blue)
+                        .frame(height: 40)
+                }
             }
         }
     }
