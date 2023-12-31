@@ -21,20 +21,31 @@ struct ContentView: View {
     
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: layout) {
-                ForEach(year[0].days) { day in
-                    Capsule()
-                        .overlay(
-                            Text("\(day.value)")
-                                .foregroundStyle(.white)
-                        )
-                        .foregroundColor(.blue)
-                        .frame(height: 40)
+            LazyVGrid(columns: layout, pinnedViews: [.sectionHeaders]) {
+                ForEach(year, id: \.name) { month in
+                    Section {
+                        ForEach(month.days) { day in
+                            Capsule()
+                                .overlay(
+                                    Text("\(day.value)")
+                                        .foregroundStyle(.white)
+                                )
+                                .foregroundColor(.blue)
+                                .frame(height: 40)
+                        }
+                    } header: {
+                        Text(verbatim: "\(month.name)")
+                            .font(.headline)
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 40)
+                            .background(Color.white)
+                    }
                 }
             }
         }
     }
 }
+
 
 
 //MARK: - Preview
